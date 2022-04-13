@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="question">math question</p>
+<button onClick="myCheese0()" id="0">answer1</button>
+<button onClick="myCheese1()" id="1">answer2</button>
+<button onClick="myCheese2()" id="2">answer3</button>
+<button onClick="myCheese3()" id="3">answer4</button>
+<br>
+<p id="scorecounter">0/0 <br> 0%</p>
+<br>
+<script>
+var score = 0;
+var totalscore = 0;
+var x = 0;
+var y = 0;
+var addition = 0;
+var choice = 100000;
+var choice2 = 100000;
+var chuckycheese = 5649;
+var subtraction = 483;
+var accuracy = 0;
+function coolThingy() {
+x = Math.floor(Math.random() * 10) + 1;
+y = Math.floor(Math.random() * 10) + 1;
+addition = x+y;
+subtraction = x-y;
+choice = Math.floor(Math.random() * 4)
+choice2 = Math.floor(Math.random() * 3);
+chuckycheese = 5649;
+if (choice2 == 0) {
+document.getElementById("question").innerHTML = x + "+" + y;
+for (let i = 0; i < 4; i++) {
+chuckycheese = Math.floor(Math.random() * 10) + Math.floor(Math.random() * 10) + 2;
+document.getElementById(i).innerHTML = chuckycheese;
+if (chuckycheese == addition) {
+i -= 1;
+}
+}
+document.getElementById(choice).innerHTML = addition;
+} else if (choice2 == 1) {
+document.getElementById("question").innerHTML = x + "-" + y;
+for (let i = 0; i < 4; i++) {
+chuckycheese = Math.floor(Math.random() * 10) - Math.floor(Math.random() * 10)
+document.getElementById(i).innerHTML = chuckycheese;
+if (chuckycheese == subtraction) {
+i -= 1;
+}
+}
+document.getElementById(choice).innerHTML = subtraction;
+} else {
+document.getElementById("question").innerHTML = x + "*" + y;
+for (let i = 0; i < 4; i++) {
+chuckycheese = Math.floor((Math.random() * 10)+1) * (Math.floor(Math.random() * 10)+1)
+document.getElementById(i).innerHTML = chuckycheese;
+if (chuckycheese == x*y) {
+i -= 1;
+}
+}
+document.getElementById(choice).innerHTML = x*y;
+}
+}
+function myCheese0() {
+if (choice == 0) {
+score++;
+}
+totalscore++;
+accuracy = Math.round(score/totalscore * 100);
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%";
+if (score == 6 && totalscore == 9 || accuracy == 69 || score == 69 || totalscore == 69 || score == 420 || totalscore == 420) {
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%" + "<br>" + "nice";
+}
+coolThingy();
+}
+function myCheese1() {
+if (choice == 1) {
+score++;
+}
+totalscore++;
+accuracy = Math.round(score/totalscore * 100);
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%";
+if (score == 6 && totalscore == 9 || accuracy == 69 || score == 69 || totalscore == 69 || score == 420 || totalscore == 420) {
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%" + "<br>" + "nice";
+}
+coolThingy();
+}
+function myCheese2() {
+if (choice == 2) {
+score++;
+}
+totalscore++;
+accuracy = Math.round(score/totalscore * 100);
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%";
+if (score == 6 && totalscore == 9 || accuracy == 69 || score == 69 || totalscore == 69 || score == 420 || totalscore == 420) {
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%" + "<br>" + "nice";
+}
+coolThingy();
+}
+function myCheese3() {
+if (choice == 3) {
+score++;
+}
+totalscore++;
+accuracy = Math.round(score/totalscore * 100);
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%";
+if (score == 6 && totalscore == 9 || accuracy == 69 || score == 69 || totalscore == 69 || score == 420 || totalscore == 420) {
+document.getElementById("scorecounter").innerHTML = score + "/" + totalscore + "<br>" + accuracy + "%" + "<br>" + "nice";
+}
+coolThingy();
+}
+coolThingy();
+</script>
+</body>
+</html>
