@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form onkeydown="return event.key != 'Enter';">
+  <label for="tdrownd">amount of trident drowneds:</label><br>
+  <input type="text" id="tdrownd" name="cool"><br>
+  </form>
+  <button onclick="coolStuff()">submit</button> <br>
+  <form onkeydown="return event.key != 'Enter';">
+  <label for="drownd">amount of total drowneds:</label><br>
+  <input type="text" id="drownd" name="eee"><br>
+</form> 
+  <button onclick="eeeStuff()">submit</button>
+  <br>
+  <br>
+  <button id="looting" onclick="lootIncrease()">no looting</button>
+<p id="results">0%</p>
+<script>
+var lootlvl = 0;
+function coolStuff() {
+let wholepercent = 100 - (Math.floor(Math.pow(0.915 - lootlvl/100, document.getElementById("tdrownd").value)*100) + 1);
+let decimalpercent = 10000 - Math.round(Math.pow(0.915 - lootlvl/100, document.getElementById("tdrownd").value)*10000) - wholepercent*100;
+if (decimalpercent >= 100) {
+document.getElementById("results").innerHTML ="basically 100% chance of getting a trident (or maybe you put in 0/nothing)";
+} else {
+document.getElementById("results").innerHTML = wholepercent + "." + decimalpercent + "% chance of getting a trident";
+}
+document.getElementById("tdrownd").value = '';
+document.getElementById("drownd").value = '';
+}
+function eeeStuff() {
+document.getElementById("tdrownd").value = document.getElementById("drownd").value * 0.0625;
+coolStuff();
+}
+function lootIncrease() {
+if (lootlvl == 3) {
+lootlvl = 0;
+} else {
+lootlvl++;
+}
+if (lootlvl == 0) {
+document.getElementById("looting").innerHTML = "no looting";
+} else {
+document.getElementById("looting").innerHTML = "looting " + lootlvl;
+}
+}
+</script>
+</body>
+</html>
+
